@@ -37,7 +37,11 @@
 	</script>
 	<script type='text/javascript'>
 		$(document).ready(function(){
-			var metaTitle = $('h1:eq(0)').text();
+			var queryString = window.location.search;
+			var urlParams = new URLSearchParams(queryString);
+			var myTitle=urlParams.get('title');
+			console.log('url ='+myTitle);
+			var metaTitle = myTitle;// $('h1:eq(0)').text();
 			$('head').append( '<meta property="og:title" content="' +  metaTitle + '">' );
 		});
 	</script>
